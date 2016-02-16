@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="message" extends="struts-default" namespace="/">
+		<action name="messageAction_*" class="messageAction" method="{1}">
+			<result name="queryMessageCount">/jsp/message/messageList.jsp</result>
+			<result name="toQueryMessageCount" type="redirectAction">
+				<param name="actionName">messageAction_queryMessageCount.action</param>
+			</result>
+			<result name="commentsList">/jsp/message/commentsList.jsp</result>
+			<result name="replyList">/jsp/message/replyCommentsList.jsp</result>
+			<result name="followsList">/jsp/message/followsList.jsp</result>
+			<result name="messagesList">/jsp/message/sysMessagesList.jsp</result>
+			<result name="auditsList">/jsp/message/auditList.jsp</result>
+			<result name="versionList">/jsp/message/versionList.jsp</result>
+			<result name="sendMessage">/jsp/message/sendMessage.jsp</result>
+			<result name="likeList">/jsp/message/likeList.jsp</result>
+			<result name="updateMessageCode" type="redirectAction">
+				<param name="actionName">messageAction_queryMessageCount.action</param>
+			</result>
+			<result name="editMsgTemplate">/jsp/message/editMsgTemplate.jsp</result>
+		</action>
+  </package>
+</struts>

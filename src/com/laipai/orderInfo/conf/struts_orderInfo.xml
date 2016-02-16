@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <package name="orderInfo" extends="struts-default" namespace="/">
+  	<action name="orderAction_*" class="orderAction" method="{1}">
+  		<result name="orderList">/jsp/ordermanage/orderList.jsp</result>
+  		<result name="cancelSuccess" type="redirectAction">
+  			<param name="actionName">orderAction_queryAllOrders.action</param>
+  		</result>
+  		<result name="user_orderlist">/jsp/usermanage/order.jsp</result>
+  		<result name="camera_orderlist">/jsp/cameraMan/cameraorder.jsp</result>
+  		<result name="toSendMessagePage">/jsp/ordermanage/editMsgTemplate.jsp</result>
+  	</action>
+  </package>
+</struts>

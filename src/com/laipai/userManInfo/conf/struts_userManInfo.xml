@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="userManInfo" extends="struts-default">
+     <!-- 登录 -->
+		<action name="login" class="userManAction"
+			method="login">
+			<result name="success">mainFrame.jsp</result> 
+		</action>
+		<action name="queryall" class="userManAction"
+			method="queryall">
+			<result name="jsp/usermanage/userList">jsp/usermanage/userlist.jsp</result> 
+		</action>
+		<action name="adduser" class="userManAction"
+			method="adduser">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryall</param>
+			</result>
+		</action>
+		<!--上传头像  -->
+		<action name="uploadPic" class="userManAction"
+			method="uploadPic">
+      	 	<interceptor-ref name="fileUpload">
+      	 	 <param name="maximumSize">3145728</param>
+	         <param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/x-png,image/jpeg</param>
+          	</interceptor-ref>
+          	<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+		</action>
+		
+	  <!--剪切头像  -->
+		<action name="cutImage" class="userManAction"
+			method="cutImage">
+		</action>
+		
+		
+		
+		<!--修改头像  -->
+		<action name="changeHeadImg" class="userManAction"
+			method="changeHeadImg">
+      	 	<interceptor-ref name="fileUpload">
+      	 	<param name="maximumSize">3145728</param>
+	         <param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/x-png,image/jpeg</param>
+          	</interceptor-ref>
+          	<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<!-- 根据ID查询用户 -->
+	     <action name="queryUserById" class="userManAction"
+			method="queryUserById">			
+			<result name="lisview">/jsp/usermanage/listview.jsp</result>
+		</action>
+		
+		<!-- 删除用户 -->
+	     <action name="deleteUser" class="userManAction"
+			method="deleteUser">			
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryall</param>
+			</result>
+		</action>
+		
+		<!-- 根据ID查询评论 -->
+		  <action name="queryComment" class="userManAction"
+		    method="queryComment">
+		    	<result name="success">/jsp/usermanage/comment.jsp</result>
+		    </action>
+		
+		<!-- 根据评论ID删除评论 -->
+
+		
+		<!-- 根据ID查询关注 -->
+		    <action name="queryFollow" class="userManAction"
+		      method="queryFollow">
+		      	<result name="success">/jsp/usermanage/follow.jsp</result>
+		      </action>
+		      
+
+		
+		<!-- 根据ID查询喜欢 -->
+		    <action name="queryLike" class="userManAction"
+		      method="queryLike">
+		       <result name="success">/jsp/usermanage/like.jsp</result>  	
+		    </action>
+		    
+
+			
+		<!-- 根据ID查询作品集 -->
+		    <action name="queryGalary" class="userManAction"
+		      method="queryGalary">
+		      <result name="success">/jsp/usermanage/galary.jsp</result>  
+		    </action>
+		
+		<!-- 根据ID查询粉丝 -->
+		    <action name="queryFans" class="userManAction"
+		      method="queryFans">
+		      <result name="success">/jsp/usermanage/fans.jsp</result>  	
+		    </action>
+		
+		<!-- 根据ID删除粉丝 -->
+			<action name="deleteFansById" class="userManAction"
+			  method="deleteFansById">
+			  <result name="success">/jsp/usermanage/fans.jsp</result>  	
+			</action>
+			
+		<!-- 根据ID查询服务 -->
+			<action name="queryService" class="userManAction"
+			  method="queryService">
+				<result name="success">/jsp/usermanage/service.jsp</result>  	
+			</action>
+		
+		<!-- 根据ID下架服务 -->
+		    <action name="offService" class="userManAction"
+		       method="offService">
+		       <result name="success">/jsp/usermanage/service.jsp</result>
+		    </action>
+		
+		<!-- 根据ID上架服务 -->
+		    <action name="onService" class="userManAction"
+		      method="onService">
+		    	<result name="success">/jsp/usermanage/service.jsp</result>  
+		    </action>
+		
+		<!-- 根据ID删除服务 -->
+		    <action name="deleteServiceById" class="userManAction"
+		      method="deleteServiceById">
+		      	<result name="success">/jsp/usermanage/service.jsp</result>
+		      </action>
+		      
+       <action name="toTop" class="userManAction" method="toTop">
+       
+        <result name="totop">/jsp/usermanage/top.jsp</result>
+       </action>
+       
+         <action name="toeditUser" class="userManAction" method="toeditUser">
+       
+        <result name="touserInfo">/jsp/usermanage/userinfo.jsp</result>
+       </action>
+		
+		<!-- 查询用户反馈 -->
+		<action name="queryFeedBack" class="userManAction" method="queryFeedBack">
+		 <result name="feedBacklist">/jsp/usermanage/feedbacklist.jsp</result>
+		</action>
+		
+		
+	    
+		
+	</package> 
+</struts>

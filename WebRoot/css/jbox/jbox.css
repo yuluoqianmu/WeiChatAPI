@@ -1,0 +1,30 @@
+#jbox_gray {
+	margin: 0; padding: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	background: #000000;
+	
+	opacity: 0.5; /*这是最重要的，因为它是CSS标准.该属性支持firefox, Safari和 Opera. */
+	filter:alpha(opacity=50); /*这个是为IE6设的，可取值在0-100，其它三个0到1.*/ 
+	-moz-opacity: 0.5; /*这个是为了支持一些老版本的Mozilla浏览器。*/ 
+	-khtml-opacity: 0.5; /*这个为了支持一些老版本的Safari浏览器。 */
+	z-index: 1;
+	display: none;
+}
+
+.jbox {
+	background-color:tan;
+	margin: 0; padding: 0;
+	background:#ffffff;
+	position: absolute;
+	border: 2px solid white;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	left:50%;
+	top:40%;
+	display: none;
+}

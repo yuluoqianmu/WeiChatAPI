@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--首页位置交互-->
+	<package name="subjectAjax" extends="json-default">
+	
+	<action name="galaryAjaxPaging" class="com.laipai.subject.action.SubjectBackAction" method="galaryAjaxPaging">
+		<result name="success" type="json">
+		 <param name="root">jsonObject</param>
+		</result>
+	</action>
+	
+	<action name="getSelectGalary" class="com.laipai.subject.action.SubjectBackAction" method="getSelectGalary">
+		<result name="success" type="json">
+		 <param name="root">jsonObject</param>
+		</result>
+	</action>
+	
+	
+	<action name="validateInputData" class="com.laipai.subject.action.SubjectBackAction" method="validateInputData">
+	<result name="success" type="json">
+	<param name="root">jsonObject</param>
+	</result>
+	</action>
+	<!--专题位置交互 -->
+	<action name="validateSubjectData" class="com.laipai.subject.action.SubjectBackAction" method="validateSubjectData">
+	<result name="success" type="json">
+	<param name="root">jsonObject</param>
+	</result>
+	</action>
+	<!-- 首页位置专题位置的异步更改！ -->
+	<action name="modifyInputData" class="com.laipai.subject.action.SubjectBackAction" method="modifyInputData">
+	<result name="success" type="json">
+	<param name="root">jsonObject</param>
+	</result>
+	</action>
+	</package>
+</struts>

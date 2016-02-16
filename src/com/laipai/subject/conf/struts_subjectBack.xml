@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="subject" extends="struts2">
+		<action name="subject_*" class="com.laipai.subject.action.SubjectBackAction"
+		 method="{1}">
+			<result name="success">/jsp/subject/{1}.jsp</result>
+			<result name="TOJSP">/jsp/subject/addGalary.jsp</result>
+			<result name="toGalaryList">/jsp/subject/galaryList.jsp</result>
+			<result name="FIND">/jsp/subject/toModifySubject.jsp</result>
+			<result name="ISOK" type="redirectAction">
+				<param name="actionName">
+					subject_subjectList.action
+				</param>
+			</result>
+		</action>
+		
+		<action name="subjectImgUpload" class="com.laipai.subject.action.SubjectBackAction"
+			method="subjectImgUpload">
+      	 	<interceptor-ref name="fileUpload">
+      	 	 <param name="maximumSize">3145728</param>
+	         <param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/x-png,image/jpeg</param>
+          	</interceptor-ref>
+          	<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+		</action>
+		
+		<action name="cutSubjectImage" class="com.laipai.subject.action.SubjectBackAction"
+			method="cutSubjectImage">
+		</action>
+	</package>
+</struts>

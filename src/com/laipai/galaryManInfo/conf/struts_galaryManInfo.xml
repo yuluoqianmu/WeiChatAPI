@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="galaryManInfo"   extends="struts2">
+	 <action name="galleryManAction_*" class="galleryManAction"
+			method="{1}">
+			<interceptor-ref name="fileUpload">
+	         	<param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/x-png,image/jpeg</param>
+	         </interceptor-ref>
+	         <interceptor-ref name="defaultStack" />
+	        <result name="input">jsp/galarymanage/error.jsp</result>
+	        <result name="success">jsp/galarymanage/success.jsp</result>
+			<result name="galaryList">jsp/galarymanage/galarylist.jsp</result>
+			<result name="toaddgallery">jsp/galarymanage/addgalary.jsp</result>
+			<result name="toTrueEditGalary">jsp/galarymanage/trueEditGalary.jsp</result>
+			<result name="toUserEditGalary">jsp/cameraMan/trueEditGalary.jsp</result>
+			 <result name="toqueryallAction" type="redirectAction">
+				<param name="actionName">galleryManAction_queryall.action</param>
+			</result>
+			<result name="touserGallary" type="redirectAction">
+			<param name="actionName">queryGalary.action</param>
+			 <param name="galaryId">${galaryBean.galaryId}</param>
+			</result>
+			<result name="toEdit">jsp/galarymanage/editgallery.jsp</result>
+			<result name="touserEdit">jsp/cameraMan/editgallery.jsp</result>
+			<result name="icommentlist">jsp/galarymanage/icommentList.jsp</result>
+			<result name="toEditAction" type="redirectAction">			  
+			   <param name="actionName">galleryManAction_toEdit.action</param>
+			    <param name="galaryId">${galaryBean.galaryId}</param> 
+			 </result>
+			 
+			 <result name="touserEditAction" type="redirectAction">			  
+			   <param name="actionName">galleryManAction_toEdit.action</param>
+			    <param name="galaryId">${galaryBean.galaryId}</param>
+			     <param name="jsp">galleryJSP</param>
+			 </result>
+			 
+			 <result name="toEditAction" type="redirectAction">			  
+			   <param name="actionName">galleryManAction_toEdit.action</param>
+			    <param name="galaryId">${galaryBean.galaryId}</param> 
+			 </result>
+			 
+			<result name="saveEdit" type="redirectAction">			  
+			   <param name="actionName">galleryManAction_toEdit.action</param>
+			   <param name="galaryId">${galaryBean.galaryId}</param> 		                               
+			 </result>
+	 
+     </action>
+      <action name="selectCover" class="galleryManAction"
+			method="selectCover">
+	 </action>
+	  <action name="selectCover2" class="galleryManAction"
+			method="selectCover2">
+	 </action>
+	 	 
+	</package> 
+</struts>

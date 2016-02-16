@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bonecp-config>  
+  <default-config>
+  </default-config>
+   
+  <named-config name="dbName">
+    <property name="jdbcUrl">jdbc:mysql://laipaisheying.mysql.rds.aliyuncs.com:3306/laipaicloud?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true</property>  
+    <property name="username">laipai</property>  
+    <property name="password">Laipai_2015</property>
+    <property name="releaseHelperThreads">3</property>  
+    <property name="partitionCount">3</property>  
+    <property name="maxConnectionsPerPartition">10</property>  
+    <property name="minConnectionsPerPartition">5</property>
+  </named-config>   
+   <!-- 
+   <named-config name="dbName">
+    <property name="jdbcUrl">jdbc:mysql://123.56.146.182:3306/laipaiTest?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true</property>  
+    <property name="username">laipai</property>  
+    <property name="password">laipai@2015</property>
+    <property name="releaseHelperThreads">3</property>  
+    <property name="partitionCount">3</property>  
+    <property name="maxConnectionsPerPartition">10</property>  
+    <property name="minConnectionsPerPartition">5</property>
+  </named-config>   
+     -->
+</bonecp-config> 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="cameraCheckAjax" extends="json-default">
+    <action name="passAppform" class="checkAction" method="passAppform">
+          <result type="json">
+          <param name="root">jsonObject</param>
+          </result>
+    </action> 
+        
+	</package>
+</struts>

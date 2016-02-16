@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="serviceInfo" extends="struts-default">
+	  <action name="serviceAction_*" class="serviceAction" method="{1}">
+	    <result name="list">/jsp/servicemanage/serviceList.jsp</result>
+	    <result name="queryList" type="redirectAction">
+	    	<param name="actionName">serviceAction_queryAllService.action</param>
+	    </result>
+	    <result name="toModify">/jsp/servicemanage/serviceModify.jsp</result>
+	    <result name="toServiceDetail">/jsp/servicemanage/serviceDetail.jsp</result>
+	    <result name="toAdd">/jsp/servicemanage/serviceAdd.jsp</result>
+	    <result name="toAddUserService">/jsp/usermanage/user_serviceAdd.jsp</result>
+	    <result name="queryUserServiceList">/jsp/usermanage/service.jsp</result>
+	  </action>
+	</package>
+</struts>

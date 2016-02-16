@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="operationManager" extends="struts2">
+		<action name="operation_*" class="operationManager"
+		 method="{1}">
+			<result name="success">/jsp/operationManager/{1}.jsp</result>
+			<result name="find">/jsp/operationManager/cammeraMan.jsp</result>
+			<result name="ISOK" type="redirectAction">
+				<param name="actionName">
+					operation_cityList.action
+				</param>
+			</result>
+		</action>
+	</package>
+	<package name="styleManager" extends="struts2">
+		<action name="style_*" class="styleManager"
+		 method="{1}">
+			<result name="success">/jsp/operationManager/{1}.jsp</result>
+			<result name="FIND">/jsp/operationManager/updateStyle.jsp</result>
+			<result name="find2">/jsp/operationManager/stylecammeraMan.jsp</result>
+			<result name="ISOK" type="redirectAction">
+				<param name="actionName">
+					style_styleList.action
+				</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="inviteManager" extends="struts2">
+		<action name="Invite_*" class="inviteAction"
+		 method="{1}">
+			<result name="codelist">/jsp/operationManager/codelist.jsp</result>
+			<result name="toActionlist" type="redirectAction">
+			<param name="actionName">
+					Invite_queryAllCode.action
+				</param>
+             </result>
+		</action>
+	</package>
+	
+	 <package name="homePageIntoduce" extends="struts2">
+		<action name="queryHomePageIntroduce" class="homePageIntoduceAction" method="queryHomePageIntroduce">
+			<result name="success">jsp/operationManager/homePageIntroduce/homePageIntroList.jsp</result>
+		</action>
+		<action name="updateHomePageArticleOnline" class="homePageIntoduceAction" method="updateHomePageArticleOnline">
+			<result name="success" type="redirectAction">queryHomePageIntroduce.action</result>
+		</action>
+		<action name="deleteHomePageArticle" class="homePageIntoduceAction" method="deleteHomePageArticle">
+			<result name="success" type="redirect">queryHomePageIntroduce.action</result>
+		</action>
+		<action name="getHomePageArticleDetail" class="homePageIntoduceAction" method="getHomePageArticleDetail">
+			<result name="success">jsp/operationManager/homePageIntroduce/articleDetail.jsp</result>
+		</action>
+		<action name="toHomePageEdit" class="homePageIntoduceAction" method="toHomePageEdit">
+			<result name="success">jsp/operationManager/homePageIntroduce/addArticle.jsp</result>
+		</action>
+		<action name="saveHomePageArticle" class="homePageIntoduceAction" method="saveHomePageArticle">
+			<result name="success" type="redirectAction">queryHomePageIntroduce.action</result>
+		</action>
+	</package> 
+</struts>

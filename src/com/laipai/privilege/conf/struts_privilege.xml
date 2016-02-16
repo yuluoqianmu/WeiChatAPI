@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="privilege" extends="struts2">
+		<action name="privilegeUserList" class="privilegeAction" method="userList">
+			<result name="success">/jsp/privilege/userlist.jsp</result>
+		</action>
+		<action name="privilegeChange2Admin" class="privilegeAction" method="change2Admin">
+			<result name="success" type="redirectAction">privilegeUserList.action</result>
+			<result name="error">/jsp/error.jsp</result>
+		</action>
+		<action name="priveliegeAddPrivilege" class="privilegeAction" method="addPrivilege">
+			<result name="success" type="redirectAction">privilegeUserList.action</result>
+			<result name="error">/jsp/error.jsp</result>
+		</action>
+		<action name="priveliegeLogin" class="privilegeAction" method="login">
+			<result name="success">mainFrame.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="privilegeLogout" class="privilegeAction" method="logout">
+			<result name="success">login.jsp</result>
+		</action>
+		
+		<action name="addEmployee" class="privilegeAction" method="addEmployee">
+		  <result name="toqueryall" type="redirectAction">
+		   <param name="actionName">privilegeUserList.action</param>
+		 </result>
+		</action>
+		
+		<action name="toeditEmployee" class="privilegeAction" method="toeditUser">
+		  <result name="toedit">/jsp/privilege/listview.jsp</result>
+		</action>
+		<action name="changeemployee" class="privilegeAction" method="changeemployee">
+		  <result name="toqueryall" type="redirectAction">
+		   <param name="actionName">privilegeUserList.action</param>
+		  </result>
+		</action>
+		
+		<action name="deleteEmployee" class="privilegeAction" method="deleteEmployee">
+		  <result name="toqueryall" type="redirectAction">
+		   <param name="actionName">privilegeUserList.action</param>
+		  </result>
+		</action>
+	</package>
+	
+</struts>

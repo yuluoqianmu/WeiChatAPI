@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!--首页位置交互-->
+	<package name="cityAjax" extends="json-default">
+	<action name="validateCity" class="operationManager" method="validateCity">
+	<result name="success" type="json">
+	<param name="root">jsonObject</param>
+	</result>
+	</action>
+	
+	<action name="sendCode" class="inviteAction" method="sendCode">
+	    <result type="json">
+	    </result>
+    </action>
+	</package>
+</struts>

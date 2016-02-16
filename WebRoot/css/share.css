@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* 摄影师分享 */
+
+body {
+    background-color: #f3f3f3;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: inherit;
+    margin: 0%;
+    width:100%;
+}
+.container-fluid{
+	width:100%;
+	max-width: 100%;
+}
+hr{
+	max-width: 100%;
+	border:0px;
+	padding: 0%;
+	margin: 0%;
+	width:  100%;
+	color: #c0c0c0;
+	overflow: hidden;
+	border-bottom: 1px solid;
+}
+.cameraMan{
+	font-size: 1.125em;
+	color: #1a1817;
+	
+}
+.camera_city{
+	font-size: 0.875em;
+	color: #807773;
+}
+/**顶部.的三个标签*/
+/**来拍图标*/
+img.laipaiIcon{
+	height: 96%;
+    margin: 12% 8% 8% 8%;
+    max-width: 100%;
+    width: 96%;
+}
+
+/**来拍文字*/
+.laipaiText{
+	max-width:100%;
+	width:50%;
+	margin-top:4%;
+	margin-left:-2%;
+	float:left;
+}
+
+/**来拍*/
+.big500 {
+	color: black;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+/**立即下载按钮*/
+.bt {
+	background-color: #D15855;
+	color: #fff;
+	border: 0px;
+	font-size: 50px;
+	width: 90%;
+	margin-top: 14%;
+	/*height:120px;*/
+	cursor: pointer;
+}
+.image150 {
+	/*margin-top: 10%;
+	margin-bottom: 10%;
+	border-radius: 20px;*/
+	width: 50%;
+	height: 50%;
+	margin: 3% 19% 3% 19%;
+}
+
+/**展示的图片*/
+.containImg{
+	max-width:100%;
+	width: 100%; 
+	text-align: center;
+	margin-top:1%;
+	 
+}
+
+/* .img-circle{
+	max-width: 30%;
+	max-height: 30%;
+	width: 30%;
+	height: 30%;
+} */
+.text1{
+	text-align: left;
+	width:100%;
+	max-width:100%;
+	backgroud-color:#fff;
+	padding: 0%;
+	margin: 0%;
+	font-size:  0.875em;
+	color: #807773;
+}
+.text2{
+	width:100%;
+	max-width:100%;
+	backgroud-color:#fff;
+	padding: 0%;
+	margin: 0%;
+	color: #1a1817;
+	font-size: 1em;	
+}
+@media (min-device-width:410px) and (max-device-width:480px) { 
+.cameraMan{
+	font-size: 1.6em;
+	color: #1a1817;
+	
+}
+.camera_city{
+	font-size: 1.2em;
+	color: #807773;
+}
+.text1{
+	text-align: left;
+	width:100%;
+	max-width:100%;
+	backgroud-color:#fff;
+	padding: 0%;
+	margin: 0%;
+	font-size:  1.2em;
+	color: #807773;
+}
+.text2{
+	width:100%;
+	max-width:100%;
+	backgroud-color:#fff;
+	padding: 0%;
+	margin: 0%;
+	color: #1a1817;
+	font-size: 1.4em;	
+}
+}

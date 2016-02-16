@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="userFollow" extends="struts2">
+		<action name="userFollowList" class="userFollowAction"
+			method="followList">
+			<result name="success">/jsp/usermanage/userFollowList.jsp</result> 
+		</action>
+		<action name="userFollowDelete" class="userFollowAction"
+			method="followDelete">
+			<result name="success" type="redirectAction">userFollowList.action</result>
+		</action>
+		<action name="searchUserInfoByUserName" class="userFollowAction" method="searchUserInfoByUserName">
+			<result></result>
+		</action>
+		<action name="userFollowEdit" class="userFollowAction"
+			method="editFollow">
+			<result name="success" type="redirectAction">userFollowList.action</result>
+		</action>
+		
+	   <action name="deletefollow" class="userFollowAction"
+			method="deletefollow">
+			<result name="success" type="redirectAction">userFollowList.action</result>
+		</action>
+
+	</package> 
+</struts>

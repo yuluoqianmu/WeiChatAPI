@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="laipaiCLub" extends="struts2">
+		<action name="queryAllArticle" class="laiPaiClubInfoAction"
+			method="queryAllArticle">
+			<result name="success">jsp/laipaiClub/articleList.jsp</result>
+		</action>
+		
+		<action name="toEdit" class="laiPaiClubInfoAction" method="toEdit">
+			<result name="success">jsp/laipaiClub/addArticle.jsp</result>
+		</action>
+		
+		<!-- 保存文章 -->
+		<action name="saveArticle" class="laiPaiClubInfoAction" method="saveArticle">
+			<param name="savePath">/LaiPai/upload/lpClubImg</param>
+      	    <param name="maximumSize">20971520</param>
+      	 	<interceptor-ref name="fileUpload">
+	         <param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/x-png,image/jpeg</param>
+          	</interceptor-ref>
+          	<!-- 默认拦截器必须放在fileUpload之后，否则无效 -->
+            <interceptor-ref name="defaultStack" />
+         	<result name="input">jsp/laipaiClub/addArticle.jsp?error=0</result>
+			<result name="success" type="redirect">queryAllArticle.action</result>
+		</action>
+		<action name="updateArticleOnline" class="laiPaiClubInfoAction" method="updateArticleOnline">
+			<result name="list" type="redirect">queryAllArticle.action</result>
+			<result name="detail">jsp/laipaiClub/articleDetail.jsp</result>
+		</action>
+		
+		<action name="deleteArticle" class="laiPaiClubInfoAction" method="deleteArticle">
+			<result name="success" type="redirect">queryAllArticle.action</result>
+		</action>
+		<action name="getArticleDetail" class="laiPaiClubInfoAction" method="getArticleDetail">
+			<result name="success">jsp/laipaiClub/articleDetail.jsp</result>
+		</action>
+		
+		<!--  上传图片  -->
+	     <action name="uploadImage" class="laiPaiClubInfoAction" method="uploadImage">
+		     <interceptor-ref name="fileUpload">
+		      <param name="allowedTypes">image/bmp,image/png,image/gif,image/pjpeg,image/jpeg</param>
+		      <param name="maximumSize">20971520</param>
+		     </interceptor-ref>
+		     <interceptor-ref name="defaultStack"/> 
+		       <result name="success">/jsp/laipaiClub/uploadImageList.jsp</result>
+		     <result name="input">/jsp/laipaiClub/uploadImageList.jsp</result>
+	     </action>
+		<!-- 新增评论 -->
+		<action name="addLpComment" class="laiPaiClubInfoAction" method="addLpComment">
+			<result name="success">jsp/laipaiClub/articleDetail.jsp</result>
+		</action>
+		<!-- 删除评论 -->
+		<action name="deleteLpComment" class="laiPaiClubInfoAction" method="deleteLpComment">
+			<result name="success">jsp/laipaiClub/articleDetail.jsp</result>
+		</action>
+		
+	     <action name="shareClub" class="laiPaiClubShareAction" method="shareClub">
+			<result name="success">jsp/share/sharelaipaiClub.jsp</result>
+		</action>
+		
+	</package> 
+</struts>

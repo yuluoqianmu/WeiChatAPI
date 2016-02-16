@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="galaryManInfoAjax" extends="json-default">
+    <action name="persistentImage" class="galleryManAction" method="persistentImage">
+        <!--   <param name="savePath">E:\workspace\LaiPai\src\main\webapp\upload</param> -->
+          <result type="json">
+          <param name="root">jsonObject</param>
+          </result>
+    </action>
+    <!-- 在详情页上传图片 -->
+    <action name="persistentImage_updateDetail" class="galleryManAction" method="persistentImage_updateDetail">
+          <result type="json">
+          <param name="root">jsonObject</param>
+          </result>
+    </action>
+    <action name="delImage" class="galleryManAction" method="delImage">
+          <result type="json">
+          <param name="root">jsonObject</param>
+          </result>
+    </action>
+    <action name="clearTempImages" class="galleryManAction" method="clearTempImages">
+          <result type="json">
+          <param name="root">jsonObject</param>
+          </result>
+    </action>
+    
+     <action name="queryUserService" class="galleryManAction" method="queryUserService">
+         <result  name="success" type="json">
+         <param name="includeProperties">\[\d+\]\.serviceId,\[\d+\]\.serviceName</param>
+          </result>
+    </action>
+   
+     <action name="deleteGalleryAjax" class="galleryManAction" method="deleteGalleryAjax">
+	    <result type="json">
+	    <param name="root">jsonObject</param>
+	    </result>
+    </action>
+    
+    <action name="changeGalleryIndex" class="galleryManAction" method="changeGalleryIndex">
+	    <result type="json">
+	    <param name="root">jsonObject</param>
+	    </result>
+    </action>
+    
+    <action name="smartIndex" class="galleryManAction" method="smartIndex">
+	    <result type="json">
+	    </result>
+    </action>  
+   <action name="hideGallery" class="galleryManAction" method="hideGallery">
+	    <result type="json">
+	    </result>
+    </action>
+    
+    <action name="deletePhotoById" class="galleryManAction" method="deletePhotoById">
+	    <result type="json">
+	    </result>
+    </action>
+	</package>
+</struts>

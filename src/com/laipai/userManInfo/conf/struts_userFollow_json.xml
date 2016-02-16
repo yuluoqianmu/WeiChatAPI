@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	 <package name="userFollowJson" extends="json">
+		<action name="userFollowGetFollowById" class="userFollowAction" method="userFollowGetFollowById">
+				<result type="json"></result> 
+		</action>
+		<action name="checkUser" class="userManAction" method="checkUser">
+		      <result name="checkUser" type="json">
+		         <param name="root">message</param>
+				<!-- 只对对象中的某个属性被json化 -->
+				<param name="includeProperties">message</param>
+		      </result>
+		    </action>
+		    
+		<action name="findUserByAccount" class="userManAction" method="findUserByAccount">
+		      <result name="getUserByaccount" type="json">
+              <param name="root">account</param>
+		      </result>
+		    </action>    
+		    
+		    
+		<action name="changeNick" class="userManAction" method="changeNick">
+				<result type="json"></result> 
+		</action> 
+
+		<action name="changeMobile" class="userManAction" method="changeMobile">
+				<result type="json"></result> 
+		</action> 
+
+		
+		<action name="checkFollow" class="userFollowAction"
+			method="checkFollow">
+		</action>
+		<!-- 删除用户评论 -->
+		 <action name="deleteCommentAjax" class="userManAction"
+			method="deleteCommentById">
+		   <result type="json"></result> 
+		</action>
+		
+		<!-- 删除用户预约 -->
+	 <action name="deleteOrderByUser" class="orderAction"
+			method="deleteOrderByUser">
+		   <result type="json"></result> 
+		</action>
+		
+		<!-- 删除摄影师订单 -->
+	 <action name="deleteOrderByCamera" class="orderAction"
+			method="deleteOrderByCamera">
+		   <result type="json"></result> 
+		</action>
+		
+				<!-- 删除喜欢 -->
+	 <action name="deleteLikeById" class="userManAction"
+			method="deleteLikeById">
+		   <result type="json"></result> 
+		</action>
+		
+		<!-- 删除关注 -->
+			 <action name="deleteFollowById" class="userManAction"
+			method="deleteFollowById">
+		   <result type="json"></result> 
+		</action>
+		
+		 <action name="deleteOrderByUser" class="orderAction"
+			method="deleteOrderByUser">
+		   <result type="json"></result> 
+		</action>
+		
+		 <action name="cancelOrder" class="orderAction"
+			method="cancelOrder">
+		   <result type="json"></result> 
+		</action>
+	</package>
+	     
+</struts>
